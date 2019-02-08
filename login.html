@@ -1,0 +1,246 @@
+<html>
+    <head>
+        <title>Login Page</title>
+        <style>
+            body
+            {
+                margin: 0;
+                padding: 0;
+                background-image: url(road.jpg);
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            .container
+            {
+                float: left;
+                width: 20%;
+                position: sticky;
+                top: 0px;
+                z-index: 2;
+            }
+            
+            .btn
+            {
+                width: 100%;
+                color: white;
+                background-color: black;
+                cursor: pointer;
+                border: none;
+                padding: 12px 24px;
+            }
+            
+            .btn:hover
+            {
+                color: white;
+                background-color:crimson;
+            }
+            
+            .container:hover .content
+            {
+                display:block;
+            }
+            .content
+            {
+                display: none;
+                text-align: center;
+                background-color: rgba(0,0,0,0.2);
+                position: absolute;
+                width: 100%;
+            }
+            
+            .anc
+            {
+                padding: 10px;
+                display: block;
+                text-decoration: none;
+                color: white;
+            }
+            
+            .anc:hover
+            {
+                background-color:white;
+                color: black;
+            }
+            
+            .logobody
+            {
+                position: absolute;
+                top: 20%;
+                left: 35%;
+                width: 350px;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                padding-top: 70px;
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-bottom: 40px;
+                border-radius: 20px;
+            }
+
+            .logodesign
+            {
+                position: absolute;
+                top: -50px;
+                left: calc(45% - 50px);
+            }
+
+            h1 
+            {
+                margin-top: 25px;
+                background-color: #1E90FF;
+                padding: 5px;
+                text-align: center;
+                font-size: 30px;
+                font-weight: bold;
+                border-radius: 30px;
+            }
+
+            .logobody p
+            {
+                margin-top: 18px;
+                padding: 0;
+                font-weight: bold;
+            }
+
+            .logobody input
+            {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .logobody input[type="text"], input[type="password"]
+            {
+                border: none;
+                border-bottom: 1px solid white;
+                background: transparent;
+                outline: none;
+                height: 30px;
+                color: white;
+                font-weight: bold;
+            }
+
+            .logobody input[type="submit"]
+            {
+                font-size: 15px;
+                color: white;
+                font-weight: bold;
+                border: none;
+                outline: none;
+                background-color: #1E90FF;
+                border-radius: 30px;
+                padding: 10px 0px;
+            }
+
+            .logobody a
+            {
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+            }
+
+            .logobody input[type="submit"]:hover
+            {
+                background-color: red;
+            }
+
+            .para
+            {
+                height: 20px;
+            }
+            .logobody button
+            {
+                font-weight: bold;
+                width: 100%;
+                color:white;
+                height: 40px;
+                background-color: #1E90FF;
+                border: none;
+                border-radius: 30px;
+
+            }
+
+            .logobody button:hover
+            {
+                background-color: red;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <div class="container">
+                <button class="btn">Home</button>
+                <div class="content">
+                    <a href="" class="anc">Link1</a>
+                    <a href="" class="anc">Link2</a>
+                    <a href="" class="anc">Link3</a>
+                </div>
+            </div>
+            <div class="container">
+                <button class="btn">Search Bus</button>
+                <div class="content">
+                    <a href="" class="anc">Link1</a>
+                    <a href="" class="anc">Link2</a>
+                    <a href="" class="anc">Link3</a>
+                </div>
+            </div>
+            <div class="container">
+                <button class="btn">Register</button>
+                <div class="content">
+                    <a href="" class="anc">Link1</a>
+                    <a href="" class="anc">Link2</a>
+                    <a href="" class="anc">Link3</a>
+                </div>
+            </div>
+            <div class="container">
+                <button class="btn">Contact Us</button>
+                <div class="content">
+                    <a href="" class="anc">Link1</a>
+                    <a href="" class="anc">Link2</a>
+                    <a href="" class="anc">Link3</a>
+                </div>
+            </div>
+            <div class="container">
+                <button class="btn">About Us</button>
+                <div class="content">
+                    <a href="" class="anc">Link1</a>
+                    <a href="" class="anc">Link2</a>
+                    <a href="" class="anc">Link3</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="logobody">
+	    <img src="login.png" class="logodesign">
+        <form name="Form1" action="www.google.com" method="post" onsubmit="return myValidation()">
+            <h1> Sign In </h1>
+            <p> Username </p>    
+            <input type="text" name="nm" placeholder="Enter your username">
+            <p> Password </p>
+            <input type="password" name="pwd" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z]).{8,}">
+            <input type="submit" name="sb" value="Login">
+            <a href="" >Forgot Password?</a>
+            <p class="para">New To Bus Management??</p>
+            <button formaction="signup.html">Sign Up</button>
+        </form>
+        
+        <script>
+        function myValidation() 
+        {
+            var nam = document.forms["Form1"]["nm"].value;  
+            var pass = document.forms["Form1"]["pwd"].value;
+            var flag = true;
+            if( nam == ""){
+                alert("Name cannot be empty!");
+                flag = false;
+            }
+            if( pass == ""){
+                alert("Password cannot be empty!!");
+                flag = false;
+            }        
+            return flag;
+        }    
+        </script>
+	</div>
+    </body>
+</html>
